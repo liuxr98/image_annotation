@@ -1,0 +1,3 @@
+# 保存与Flask环境相关的公开信息
+FLASK_ENV=production
+FLASK_APP=annotate

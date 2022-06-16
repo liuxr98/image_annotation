@@ -1,0 +1,8 @@
+data
+# local environment variables
+.env
+.flaskenv
+
+# Editor directories and files
+.idea
+.vscode
