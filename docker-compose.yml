@@ -46,7 +46,7 @@ services:
       - annotate_data_model:/home/app/data/models
 
   redis:
-    container_name: lxrredis
+    container_name: redis
     image: redis
     ports:
       - 6379:6379

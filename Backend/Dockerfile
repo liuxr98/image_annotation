@@ -16,8 +16,8 @@ RUN rm /etc/apt/sources.list \
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 COPY ./requirements.txt ./requirements.txt
-RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple&& \
-    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple \
+    && pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 COPY . .
 EXPOSE 5000
