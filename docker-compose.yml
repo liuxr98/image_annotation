@@ -5,11 +5,14 @@ services:
     image: annotate-frontend
     build: ./frontend
     environment:
-      - VUE_APP_BASEURL=http://localhost:5000
+      - VUE_APP_BASEURL=http://121.5.159.222:8080/api
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "8080:80"
-  
-  backend: 
+
+  backend:
     container_name: backend
     image: annotate-backend
     build: ./Backend
@@ -25,7 +28,7 @@ services:
     volumes:
       - annotate_data_image:/home/app/data/images
       - annotate_data_model:/home/app/data/models
-  
+
   celery:
     container_name: celery
     image: annotate-backend
@@ -43,11 +46,11 @@ services:
       - annotate_data_model:/home/app/data/models
 
   redis:
-    container_name: redis
+    container_name: lxrredis
     image: redis
     ports:
       - 6379:6379
-  
+
   db:
     container_name: db
     image: mysql:8.0.28
@@ -57,7 +60,6 @@ services:
     volumes:
       - annotate_db:/var/lib/mysql
       - ./annotate.sql:/docker-entrypoint-initdb.d/start.sql
-
 
 volumes:
   annotate_db:
