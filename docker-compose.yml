@@ -5,7 +5,7 @@ services:
     image: annotate-frontend
     build: ./frontend
     environment:
-      - VUE_APP_BASEURL=http://121.5.159.222:8080/api
+      - VUE_APP_BASEURL=http://101.34.255.125:8080/api
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - ./nginx.conf:/etc/nginx/nginx.conf

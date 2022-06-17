@@ -57,7 +57,7 @@ def register_blueprints(app):
 
 def register_extensions(app):
     db.init_app(app)
-    cors.init_app(app, expose_headers=["Content-Disposition", "Content-Type"], supports_credentials=True, origins=["http://127.0.0.1:8080", "http://121.5.159.222:8080"])
+    cors.init_app(app, expose_headers=["Content-Disposition", "Content-Type"], supports_credentials=True, origins=["http://127.0.0.1:8080", "http://101.34.255.125:8080"])
     jwt.init_app(app)
 
 
