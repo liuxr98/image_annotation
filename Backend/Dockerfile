@@ -14,11 +14,10 @@ RUN rm /etc/apt/sources.list \
     && echo "deb-src http://mirrors.aliyun.com/debian-security/ buster/updates main non-free contrib" >> /etc/apt/sources.list \
     && apt-get update
 
-
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 COPY ./requirements.txt ./requirements.txt
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple&& \
+    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 COPY . .
 EXPOSE 5000
